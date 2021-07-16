@@ -29,13 +29,14 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY || "your private key"
 
 module.exports = {
     //changed default network to kovan
-    defaultNetwork: "kovan",
+    defaultNetwork: "hardhat",
     networks: {
         hardhat: {
             // // If you want to do some forking, uncomment this
-            // forking: {
-            //   url: MAINNET_RPC_URL
-            // }
+            forking: {
+                url: MAINNET_RPC_URL,
+                blockNumber: 3000000
+            }
         },
         localhost: {
         },
