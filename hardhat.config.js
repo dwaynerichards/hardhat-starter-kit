@@ -19,17 +19,19 @@ require("./tasks/api-consumer")
 
 require('dotenv').config()
 
-const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL || process.env.ALCHEMY_MAINNET_RPC_URL || "https://eth-mainnet.alchemyapi.io/v2/your-api-key"
+const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL || process.env.ALCHEMY_MAINNET_RPC_URL
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL || "https://eth-rinkeby.alchemyapi.io/v2/your-api-key"
-const KOVAN_RPC_URL = process.env.KOVAN_RPC_URL || "https://eth-kovan.alchemyapi.io/v2/your-api-key"
+const KOVAN_RPC_URL = process.env.KOVAN_RPC_URL 
 const MNEMONIC = process.env.MNEMONIC || "your mnemonic"
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "Your etherscan API key"
 // optional
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "your private key"
+const PRIVATE_KEY = process.env.PRIVATE_KEY
+
+console.log(process.env);
 
 module.exports = {
     //changed default network to kovan
-    defaultNetwork: "hardhat",
+    defaultNetwork: "kovan",
     networks: {
         hardhat: {
             // // If you want to do some forking, uncomment this

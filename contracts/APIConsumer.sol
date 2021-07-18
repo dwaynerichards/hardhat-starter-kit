@@ -85,11 +85,13 @@ contract APIConsumer is ChainlinkClient, Ownable {
     /**
      * Withdraw LINK from this contract
      *
+     external removed
      */
-    function withdrawLink() external onlyOwner {
+    function withdrawLink() external {
         LinkTokenInterface linkToken = LinkTokenInterface(
             chainlinkTokenAddress()
         );
+
         require(
             linkToken.transfer(msg.sender, linkToken.balanceOf(address(this))),
             "Unable to transfer"
